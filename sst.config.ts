@@ -1,5 +1,5 @@
 /// <reference path="./.sst/platform/config.d.ts" />
-import { RemotionLambda } from "remotion-sst";
+import RemotionLambda from "./src/utils/sst-remotion";
 
 export default $config({
   app(input) {
@@ -13,12 +13,16 @@ export default $config({
     };
   },
   async run() {
-    const remotion = new RemotionLambda("RemotionTest", {
+    const rem = new RemotionLambda("RemotionTest", {
       path: "",
+      forceDestroy: true,
+
+      
     });
     new sst.aws.Astro("RemotionTang", {
+
       // domain: ""
-      link: [remotion],
+      link: [rem],
       transform: {
         assets: {
           access: "public",

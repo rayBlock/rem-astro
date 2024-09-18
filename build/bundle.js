@@ -9150,14 +9150,28 @@ remotion_1.Internals.CSSUtils.injectCSS(`
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/remotion@4.0.212_react-dom@18.3.1_react@18.3.1/node_modules/remotion/dist/cjs/index.js
 var cjs = __webpack_require__(4337);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(758);
-;// CONCATENATED MODULE: ./remotion/Composition.tsx
-const MyComposition = () => {
-  return /* @__PURE__ */ React.createElement("div", { style: { fontSize: "55px", display: "flex", justifyContent: "center", alignItems: "center" } }, "hello world");
+;// CONCATENATED MODULE: ./rem/Composition.tsx
+
+const MyComp = () => {
+  const frame = (0,cjs.useCurrentFrame)();
+  const some = (0,cjs.interpolate)(frame, [0, 100], [0, 10]);
+  const sin = Math.sin(some);
+  return /* @__PURE__ */ React.createElement("div", { style: {
+    fontSize: "65px",
+    display: "flex",
+    fontWeight: "bold",
+    width: "100%",
+    height: "100%",
+    background: `linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)`,
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white"
+  } }, /* @__PURE__ */ React.createElement("span", { style: { transform: `rotate(${sin * 4}deg)` } }, "hello world"));
 };
 
-;// CONCATENATED MODULE: ./remotion/Root.tsx
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(758);
+;// CONCATENATED MODULE: ./rem/Root.tsx
 
 
 
@@ -9165,8 +9179,8 @@ const RemotionRoot = () => {
   return /* @__PURE__ */ react.createElement(react.Fragment, null, /* @__PURE__ */ react.createElement(
     cjs.Composition,
     {
-      id: "Empty",
-      component: MyComposition,
+      id: "some",
+      component: MyComp,
       durationInFrames: 60,
       fps: 30,
       width: 1280,
@@ -9175,7 +9189,7 @@ const RemotionRoot = () => {
   ));
 };
 
-;// CONCATENATED MODULE: ./remotion/index.ts
+;// CONCATENATED MODULE: ./rem/index.ts
 
 
 (0,cjs.registerRoot)(RemotionRoot);

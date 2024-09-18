@@ -1,5 +1,6 @@
 ---
 import heroImage from "@/assets/hero.webp";
+import { Playa } from "@/components/remotion/Playa";
 import { getLang } from "@/utils/i18n";
 import { Picture } from "astro:assets";
 import { getEntry } from "astro:content";
@@ -16,17 +17,19 @@ const adjustLink2 = lang === "en" ? link2 : `${lang}${link2}`;
 
 {
   hero.data.enable && (
-    <div class="grid items-center md:grid-cols-2">
+    <div class="grid items-center md:grid-cols-2 md:min-h-96">
       {/* hero image on the right */}
       <div class="py-6 hidden md:block md:order-1">
-        <Picture
+        <Playa client:only="react" />
+
+        {/* <Picture
           loading="lazy"
           src={heroImage}
           alt="hero"
           widths={[200, 400, 600]}
           sizes="(max-width: 400px) 100vw, 400px"
           format="webp"
-        />
+        /> */}
       </div>
 
       {/* hero content on the left */}

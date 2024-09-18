@@ -5,5 +5,16 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "RemotionTang": {
+      "type": "sst.aws.Astro"
+      "url": string
+    }
+    "RemotionTest": {
+      "bucketName": string
+      "functionName": string
+      "region": string
+      "siteUrl": string
+      "type": "pkg.index.RemotionLambda"
+    }
   }
 }

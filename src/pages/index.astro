@@ -1,9 +1,11 @@
 ---
 import Base from "@/layouts/Base.astro";
+
 import CallToAction from "@/partials/CallToAction.astro";
 import Features from "@/partials/Features.astro";
 import HeroLanding from "@/partials/HeroLanding.astro";
 import Testimonials from "@/partials/Testimonials.astro";
+import { Playa } from "../components/remotion/Playa";
 
 export const prerender = false;
 
@@ -18,7 +20,7 @@ const description =
 
 <Base title={title} meta_title={meta_title} description={description}>
   <!-- Hero Section -->
-  <section id="index-section" class="section py-14">
+  <section id="index-section" class="section py-14]">
     <div class="container">
       <HeroLanding />
     </div>
