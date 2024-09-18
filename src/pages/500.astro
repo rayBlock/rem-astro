@@ -1,0 +1,94 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getLang } from "@/utils/i18n";
+
+const lang = getLang(Astro.url.pathname);
+
+const text = {
+  en: {
+    title: "Internal Server Error",
+    header: "500 Internal Server Error",
+    description: "The page you are seeing means that something went wrong on server side. Please try again later.",
+    buttonText: "Back to home"
+  },
+  fr: {
+    title: "Erreur Interne du Serveur",
+    header: "500 Erreur Interne du Serveur",
+    description: "La page que vous voyez signifie qu'une erreur s'est produite côté serveur. Veuillez réessayer plus tard.",
+    buttonText: "Retour à l'accueil"
+  },
+  it: {
+    title: "Errore Interno del Server",
+    header: "500 Errore Interno del Server",
+    description: "La pagina che stai vedendo significa che si è verificato un errore sul lato server. Si prega di riprovare più tardi.",
+    buttonText: "Torna alla home"
+  },
+  es: {
+    title: "Error Interno del Servidor",
+    header: "500 Error Interno del Servidor",
+    description: "La página que está viendo significa que algo salió mal en el lado del servidor. Por favor, inténtelo de nuevo más tarde.",
+    buttonText: "Volver al inicio"
+  },
+  de: {
+    title: "Interner Serverfehler",
+    header: "500 Interner Serverfehler",
+    description: "Die Seite, die Sie sehen, bedeutet, dass auf der Serverseite etwas schief gelaufen ist. Bitte versuchen Sie es später erneut.",
+    buttonText: "Zurück zur Startseite"
+  },
+  ja: {
+    title: "内部サーバーエラー",
+    header: "500 内部サーバーエラー",
+    description: "このページが表示されているということは、サーバー側で何か問題が発生したことを意味します。後でもう一度お試しください。",
+    buttonText: "ホームに戻る"
+  },
+  ar: {
+    title: "خطأ داخلي في الخادم",
+    header: "500 خطأ داخلي في الخادم",
+    description: "الصفحة التي تراها تعني أن هناك خطأ ما حدث في جانب الخادم. يرجى المحاولة مرة أخرى لاحقًا.",
+    buttonText: "العودة إلى الصفحة الرئيسية"
+  },
+  hi: {
+    title: "आंतरिक सर्वर त्रुटि",
+    header: "500 आंतरिक सर्वर त्रुटि",
+    description: "आप जो पृष्ठ देख रहे हैं, वह दर्शाता है कि सर्वर की ओर से कुछ गलत हो गया है। कृपया बाद में पुनः प्रयास करें।",
+    buttonText: "मुख्य पृष्ठ पर वापस जाएं"
+  },
+  th: {
+    title: "ข้อผิดพลาดภายในเซิร์ฟเวอร์",
+    header: "500 ข้อผิดพลาดภายในเซิร์ฟเวอร์",
+    description: "หน้าที่คุณเห็นหมายความว่ามีบางอย่างผิดพลาดในฝั่งเซิร์ฟเวอร์ กรุณาลองใหม่อีกครั้งในภายหลัง",
+    buttonText: "กลับไปหน้าหลัก"
+  },
+  zh: {
+    title: "内部服务器错误",
+    header: "500 内部服务器错误",
+    description: "您看到此页面意味着服务器端出现了问题。请稍后再试。",
+    buttonText: "返回首页"
+  }
+};
+
+const content = text[lang] || text.en; // Fallback to English if translation not available
+---
+
+<Base title={content.title}>
+  <section class="section-sm text-center">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="sm:col-10 md:col-8 lg:col-6">
+          <span
+            class="text-[8rem] block font-bold text-dark dark:text-darkmode-dark"
+          >
+            500
+          </span>
+          <h1 class="h2 mb-4">{content.header}</h1>
+          <div class="content">
+            <p>
+              {content.description}
+            </p>
+          </div>
+          <a href="/" class="btn btn-primary mt-8">{content.buttonText}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

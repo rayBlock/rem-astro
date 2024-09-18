@@ -1,0 +1,33 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+
+export const prerender = false;
+const COLLECTION_FOLDER = "pages";
+const pages = await getSinglePage(COLLECTION_FOLDER);
+
+const { title, meta_title, description, image } = pages[0].data;
+const { Content } = await pages[0].render();
+---
+{
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+>
+  <PageHeader title={title} />
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>}

@@ -1,0 +1,24 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base title="INFO">
+  <section class="section">
+    <div>
+      <!-- also valid css style -->
+      <div style={{ fontSize: "55px" }}>
+        <button class="btn" onclick="console.log('hello', 'world')"
+          >hello world</button
+        >
+        <!-- show all meta env keys and values - this is for testing purposes. 
+        You can remove this whole page if you don't need it.
+        -->
+
+
+        <!-- <pre
+          class="justify-start text-start">{JSON.stringify(import.meta.env, null, 2)}
+          </pre> -->
+      </div>
+    </div>
+  </section>
+</Base>

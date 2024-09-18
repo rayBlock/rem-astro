@@ -1,0 +1,100 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getLang } from "@/utils/i18n";
+
+const lang = getLang(Astro.url.pathname);
+
+const text = {
+  en: {
+    title: "Page Not Found",
+    header: "404 Page Not Found",
+    description: "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    buttonText: "Back to home"
+  },
+  fr: {
+    title: "Page introuvable",
+    header: "404 Page introuvable",
+    description: "La page que vous recherchez a peut-être été supprimée, son nom a changé ou elle est temporairement indisponible.",
+    buttonText: "Retour à l'accueil"
+  },
+  it: {
+    title: "Pagina non trovata",
+    header: "404 Pagina non trovata",
+    description: "La pagina che stai cercando potrebbe essere stata rimossa, il suo nome potrebbe essere cambiato o potrebbe essere temporaneamente non disponibile.",
+    buttonText: "Torna alla home"
+  },
+  es: {
+    title: "Página no encontrada",
+    header: "404 Página no encontrada",
+    description: "Es posible que la página que busca se haya eliminado, que se haya cambiado su nombre o que no esté disponible temporalmente.",
+    buttonText: "Volver al inicio"
+  },
+  de: {
+    title: "Seite nicht gefunden",
+    header: "404 Seite nicht gefunden",
+    description: "Die von Ihnen gesuchte Seite wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.",
+    buttonText: "Zurück zur Startseite"
+  },
+  ja: {
+    title: "ページが見つかりません",
+    header: "404 ページが見つかりません",
+    description: "お探しのページは削除されたか、名前が変更されたか、一時的に利用できない可能性があります。",
+    buttonText: "ホームに戻る"
+  },
+  ar: {
+    title: "صفحة غير موجودة",
+    header: "404 صفحة غير موجودة",
+    description: "الصفحة التي تبحث عنها ربما تم إزالتها أو تغيير اسمها أو أنها غير متاحة مؤقتًا.",
+    buttonText: "العودة إلى الصفحة الرئيسية"
+  },
+  hi: {
+    title: "पृष्ठ नहीं मिला",
+    header: "404 पृष्ठ नहीं मिला",
+    description: "आप जिस पृष्ठ को खोज रहे हैं, वह हटा दिया गया हो सकता है, उसका नाम बदल दिया गया हो, या अस्थायी रूप से अनुपलब्ध हो।",
+    buttonText: "मुख्य पृष्ठ पर वापस जाएं"
+  },
+  th: {
+    title: "ไม่พบหน้า",
+    header: "404 ไม่พบหน้า",
+    description: "หน้าที่คุณกำลังมองหาอาจถูกลบไปแล้ว เปลี่ยนชื่อ หรือไม่สามารถใช้งานได้ชั่วคราว",
+    buttonText: "กลับไปหน้าหลัก"
+  },
+  zh: {
+    title: "页面不存在",
+    header: "404 页面不存在",
+    description: "您寻找的页面可能已被删除、更名或暂时无法访问。",
+    buttonText: "返回首页"
+  },
+  ko: {
+    title: "페이지가 없는다",
+    header: "404 페이지가 없는다",
+    description: "검색된 페이지가 삭제됩니다, 이름 변경됩니다, 특별한 전용가 없습니다.",
+    buttonText: "방향으로 제공하기"
+  }
+};
+
+const content = text[lang] || text.en; // Fallback to English if translation not available
+---
+
+<Base title={content.title}>
+  <section class="section-sm text-center">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="sm:col-10 md:col-8 lg:col-6">
+          <span
+            class="text-[8rem] block font-bold text-dark dark:text-darkmode-dark"
+          >
+            404
+          </span>
+          <h1 class="h2 mb-4">{content.header}</h1>
+          <div class="content">
+            <p>
+              {content.description}
+            </p>
+          </div>
+          <a href="/" class="btn btn-primary mt-8">{content.buttonText}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,82 @@
+---
+import { Icon } from "astro-icon/components";
+import { DEFAULT_LOCALE } from "../utils/i18n";
+export interface Props {
+  currentLang: string;
+  pathName: string;
+  languages: {
+    nativeName: string;
+    link: string;
+  }[];
+}
+
+const { currentLang, pathName, languages } = Astro.props;
+---
+
+<div class="language-picker">
+  <button
+    id="language-toggle"
+    class="flex items-center py-3 px-4 rounded hover:text-dark dark:hover:text-darkmode-dark"
+    aria-expanded="false"
+    aria-controls="language-menu"
+  >
+    <Icon
+      name="tabler:language-katakana"
+      class="w-6 h-6 md:w-5 md:h-5 md:inline-block mr-2"
+    />
+    <Icon
+      name="tabler:chevron-down"
+      class="w-3.5 h-3.5 ml-0.5 hidden md:inline"
+    />
+  </button>
+  <ul
+    id="language-menu"
+    class="hidden dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
+    role="menu"
+  >
+    {
+      languages.map(({ nativeName, link }) => {
+        return (
+          <li role="menuitem">
+            {/* TODO: --changeDefaultLocale
+                            all the ones in the href "en" needs to be your default
+                              example: "de" or "fr" or "th"  
+
+                              
+                              
+                              */}
+            <a
+              class={`first:rounded-t last:rounded-b py-2 px-5 block whitespace-no-wrap hover:text-dark dark:hover:text-darkmode-dark md:hover:bg-gray-100 dark:hover:bg-gray-800 ${
+                link === `/${currentLang}` ? "aw-link-active" : ""
+              }`}
+              href={
+                pathName.length <= 3 && link === "/en"
+                  ? // default lang goes to /
+                    "/"
+                  : // not default langs go to /fr, /th ...
+                    pathName.length <= 3
+                    ? link
+                    : // if we're on a page
+                      pathName.length > 3 &&
+                        currentLang === "en" &&
+                        link !== "/en"
+                      ? // we're english and routing to not english
+                        // default lang we dont need to slice away the first 3
+                        `${link}${pathName}`
+                      : pathName.length > 3 &&
+                          currentLang !== "en" &&
+                          link === "/en"
+                        ? // we're not english and routing to english
+                          `${pathName.slice(3)}`
+                        : // exchange the 3 the current lang "/fr" for link lang example: "/de"
+                          `${link}${pathName.slice(3)}`
+              }
+            >
+              {nativeName}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
