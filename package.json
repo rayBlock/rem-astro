@@ -14,7 +14,8 @@
     "show-toolbar": "astro preferences enable devToolbar",
     "studio": "drizzle-kit studio",
     "deploy": "npx sst deploy --stage production",
-    "remove-sst": "npx sst remove --stage production"
+    "remove-sst": "npx sst remove --stage production",
+    "start": "npx remotion studio src/remotion/index.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.1.1",
@@ -29,6 +30,8 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@remotion/cli": "4.0.212",
+    "@remotion/tailwind": "^4.0.212",
     "astro": "^4.3.2",
     "astro-auto-import": "^0.4.2",
     "astro-font": "^0.0.77",
@@ -54,15 +57,16 @@
     "react-lite-youtube-embed": "^2.4.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
+    "remotion": "4.0.212",
+    "remotion-sst": "^0.0.11",
+    "sharp": "^0.33.5",
     "sonner": "^1.4.41",
     "sst": "3.1.10",
-    "sharp": "^0.33.5",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "sharp": "^0.33.5",
     "@iconify-json/tabler": "^1.1.109",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
@@ -78,6 +82,7 @@
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sass": "^1.70.0",
+    "sharp": "^0.33.5",
     "tailwind-bootstrap-grid": "^5.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "5.3.3"

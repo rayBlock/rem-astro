@@ -2,7 +2,10 @@ const theme = require("./src/config/theme.json");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./remotion/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+  ],
   safelist: [
     /* { pattern: /^swiper-/ } */
   ],
@@ -25,6 +28,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        remotion: "#0e7ce3",
+        sst: "#e27152",
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
         dark: theme.colors.default.text_color.dark,

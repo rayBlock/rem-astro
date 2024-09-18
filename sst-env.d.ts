@@ -5,9 +5,5 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
-    "hoiTangStack": {
-      "type": "sst.aws.Astro"
-      "url": string
-    }
   }
 }
