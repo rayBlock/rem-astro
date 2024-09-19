@@ -1,0 +1,21 @@
+---
+import Base from "@/layouts/Base.astro";---
+---
+<Base title='Sign up'>
+	<div class="flex flex-col justify-center items-center h-screen gap-4">
+
+		<h1>Sign up</h1>
+		<form class="flex flex-col gap-2" action="/api/magicLink/signup" method="POST">
+			<input class="text-primary dark:text-primary-foreground py-4 px-2 rounded-md" type="email" name="email" required placeholder="email address" />
+			<label class="flex gap-2">
+				<input required type="checkbox" name="terms">
+				<!-- TODO terms of service -->
+				I agree to the<a class="hover:text-blue-200" href="/">terms of service
+					</a>
+			</label>
+			<button>Sign Up</button>
+		</form>
+		<h1 class="mt-12">Have an account already ? <a class="hover:text-blue-200" href="/magicLink/login">Login instead</a></h1>
+
+	</div>
+</Base>

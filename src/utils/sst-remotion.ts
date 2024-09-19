@@ -144,6 +144,11 @@ export default class RemotionLambda extends pulumi.ComponentResource {
 
   private uploadSiteContent(name: string, sitePath: string, bundleCommand?: string) {
     const resolvedPath = path.join(process.cwd(), sitePath);
+    // https://www.remotion.dev/docs/cli/bundle
+
+    // pre determined entry point if no entry file is given 
+    // meaning after npx remotion bundle  there is nothing
+    // https://www.remotion.dev/docs/terminology/entry-point#which-entry-point-is-being-used  
     execSync(`cd ${resolvedPath} && ${bundleCommand || "npx remotion bundle rem/index.ts"}`);
 
     const files = fs

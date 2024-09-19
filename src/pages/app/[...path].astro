@@ -1,0 +1,24 @@
+---
+import Base from "@/layouts/Base.astro";
+import { App } from "../../app";
+
+export const prerender = false;
+
+const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect("/login");
+}
+const { session } = Astro.locals;
+
+// export const getStaticPaths = (() => {
+//   const paths = routeTree.children?.map((child: any) => child.path) ?? [];
+//   const staticPaths = paths.map((path:string) => ({ params: { path } }));
+
+//   const indexPath = { params: { path: undefined } };
+//   return [indexPath, ...staticPaths];
+// }) satisfies GetStaticPaths;
+---
+
+<Base title="App">
+  <App client:only="react" session={session}/>
+</Base>

@@ -1,0 +1,52 @@
+---
+import Base from "@/layouts/Base.astro";
+
+const user = Astro.locals.user;
+if (user) {
+  return Astro.redirect("/");
+}
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    // const name = data.get("username");
+    const email = data.get("email");
+    console.log(email, "email");
+    console.log('data', data);
+
+
+    const d = await fetch(`/api/magicLink/signin`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    })
+
+    console.log(d, "d");
+    // const password = data.get("password");
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+---
+<Base title="Login Page">
+	<div class="flex flex-col justify-center items-center h-screen gap-4">
+
+  <h1>Login Page</h1>
+  
+  <form class="flex flex-col gap-2" action="/api/magicLink/signin" method="POST" >
+    <input class="text-primary dark:text-primary-foreground py-4 px-2 rounded-md" type="email" name="email" required placeholder="email address" />
+    <button>Sign in</button>
+  </form>
+  <h1 class="mt-12">Don't have an account yet ? <a class="hover:text-blue-200" href="/magicLink/signup">Sign Up instead</a></h1>
+</div>
+  
+  </Base>
+  

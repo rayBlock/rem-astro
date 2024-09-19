@@ -10,13 +10,16 @@ import config from "./src/config/config.json";
 import icon from "astro-icon";
 import aws from "astro-sst";
 import { i18n, filterSitemapByDefaultLocale } from "astro-i18n-aut/integration";
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+
 
 // TODO: --changeDefaultLocale
 
-// also need to adjust in i18n file -> utils/18n.ts
+// also need to adjust in i18n file -> utils/18n.ts 
+// search for changeDefaultLocale to find all the places where you'll have to switch default lang
 const defaultLocale = "en";
 const locales = {
-  en: "en-US", // the `defaultLocale`
+  en: "en-US", // the curent `defaultLocale`
   es: "es-ES",
   fr: "fr-CA",
   de: "de-DE",
@@ -33,6 +36,9 @@ export default defineConfig({
   adapter: aws({ serverRoutes: ["api/*"] }),
   // site: config.site.base_url,
   security: { checkOrigin: true,  },
+  vite: {
+    plugins: [TanStackRouterVite()]
+  },
   trailingSlash: "never",
   build: {
     format: "file",

@@ -20,6 +20,8 @@ pnpm-debug.log*
 yarn.lock
 package-lock.json
 
+src/database/turso.ts
+secrets.env
 
 
 # environment variables

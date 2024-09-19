@@ -16,5 +16,17 @@ declare module "sst" {
       "siteUrl": string
       "type": "pkg.index.RemotionLambda"
     }
+    "ResendApiKey": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "TursoToken": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "TursoUrl": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
   }
 }

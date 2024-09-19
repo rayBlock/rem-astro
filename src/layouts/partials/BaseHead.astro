@@ -27,9 +27,6 @@ const pageDescription = description ? description : config.metadata.meta_descrip
 const pageImage = `${config.site.base_url}${
   image ? image : config.metadata.meta_image
 }`;
-
-const isProd = import.meta.env.PROD;
-const isVercel = import.meta.env.VERCEL == 1;
 ---
 
 <!-- favicon -->

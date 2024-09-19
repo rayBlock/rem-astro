@@ -1,5 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
+import { Resource } from "sst";
+console.log(Resource, "Resource");
+
 ---
 
 <Base title="INFO">
@@ -10,14 +13,11 @@ import Base from "@/layouts/Base.astro";
         <button class="btn" onclick="console.log('hello', 'world')"
           >hello world</button
         >
-        <!-- show all meta env keys and values - this is for testing purposes. 
-        You can remove this whole page if you don't need it.
-        -->
+        <br />
 
+        {Resource.TursoToken.value} <br/>
+        {Resource.ResendApiKey.value}
 
-        <!-- <pre
-          class="justify-start text-start">{JSON.stringify(import.meta.env, null, 2)}
-          </pre> -->
       </div>
     </div>
   </section>
