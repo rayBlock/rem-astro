@@ -9,7 +9,6 @@ node_modules/
 # remotion build folder
 build/
 
-
 # locales
 astro_tmp_pages_*
 # logs
@@ -20,9 +19,8 @@ pnpm-debug.log*
 yarn.lock
 package-lock.json
 
-src/database/turso.ts
-secrets.env
-
+src/database/db
+sst.config
 
 # environment variables
 .env

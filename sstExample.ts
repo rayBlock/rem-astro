@@ -21,7 +21,6 @@ export default $config({
 
     const rem = new RemotionLambda("RemotionTest", {
       // It seems that keeping to path "" is the only way working
-      // let me know if other options are available
       path: "",
       // force destroy will delete your s3 bucket on command sst remove - good for testing but not recommended for prod
       // forceDestroy: true,  default is false
@@ -30,16 +29,10 @@ export default $config({
     const secretTursoToken = new sst.Secret("TursoToken");
     const secretResendKey = new sst.Secret("ResendApiKey");
 
-    new sst.aws.Astro("RemotionTang", {
+    new sst.aws.Astro("RemotionWebsite", {
       environment: {
-        TURSO_DB_URL: 
-        //secretTursoUrl.value,
-        // process.env.TURSO_DB_URL!,
-          "libsql://d-riffs-test-block-lab.turso.io",
-        TURSO_TOKEN:
-        //  secretTursoToken.value
-        // process.env.TURSO_TOKEN!,
-         "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjY3MzkwOTYsImlkIjoiZTBhYTRlOGQtNjZjOS00OTE0LWJlN2EtNGM5MDNkMWNhZTQ4In0.l14RKm5e1Oqgn_n1TKJZ04LrbWcU3CNyNtwaqmH0gixcN9MrOkvdElxnyHehbhPWYJnVAIfMS9ytGu-_YO41CA",
+        TURSO_DB_URL: "",
+        TURSO_TOKEN: ""
       },
       // set your domain. if you have purchased a route53 domain you can just insert here 
       // if your domain is on another host then good luck 

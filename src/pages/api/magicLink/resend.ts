@@ -3,11 +3,12 @@ import { Resend } from "resend";
 import { TimeSpan, createDate } from "oslo";
 import { generateIdFromEntropySize } from "lucia";
 import { eq } from "drizzle-orm";
-import { db } from "@/database/turso";
+import { db } from "@/database/db";
 import { emailVerificationTokenTable } from "@/database/schema";
 import { Resource } from "sst";
 
-// sst set secret ResendApiKey YourKey
+// in your terminal
+// sst set secret ResendApiKey YourResendKeyHere
 // https://sst.dev/docs/reference/cli/#secret
 
 export const prerender = false;
@@ -20,7 +21,7 @@ export const sendEmail = async (
   verificationLink: string
 ) => {
   // change the example to your domain
-  // <onboarding@resend.dev> needs to stay until prod domain
+  // <onboarding@resend.dev> needs to stay until prod domain I guess
   // https://resend.com/docs/send-with-nodejs
 
   const from = "🧙 example.com <onboarding@resend.dev>";

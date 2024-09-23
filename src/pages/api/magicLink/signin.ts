@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import { eq } from "drizzle-orm";
 import { createEmailVerificationToken, sendEmail } from "@/pages/api/magicLink/resend";
-import { db } from "@/database/turso";
+import { db } from "@/database/db";
 import { userTable } from "@/database/schema";
 
 export const prerender = false;

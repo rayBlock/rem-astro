@@ -1,5 +1,5 @@
 import { sessionTable, userTable } from "@/database/schema";
-import { db } from "@/database/turso";
+import { db } from "@/database/db";
 import { DrizzleSQLiteAdapter } from "@lucia-auth/adapter-drizzle";
 import { Lucia, TimeSpan } from "lucia";
 

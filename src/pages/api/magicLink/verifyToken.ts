@@ -1,5 +1,5 @@
 import { emailVerificationTokenTable, userTable } from "@/database/schema";
-import { db } from "@/database/turso";
+import { db } from "@/database/db";
 import { lucia } from "@/lib/auth/lucia";
 import type { APIRoute } from "astro";
 import { eq } from "drizzle-orm";
