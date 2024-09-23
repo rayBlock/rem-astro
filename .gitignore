@@ -19,7 +19,7 @@ pnpm-debug.log*
 yarn.lock
 package-lock.json
 
-src/database/db
+src/database/db.ts
 sst.config.ts
 
 # environment variables
