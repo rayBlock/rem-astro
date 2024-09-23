@@ -20,7 +20,7 @@ yarn.lock
 package-lock.json
 
 src/database/db
-sst.config
+sst.config.ts
 
 # environment variables
 .env

@@ -33,12 +33,8 @@ export default $config({
     new sst.aws.Astro("RemotionTang", {
       environment: {
         TURSO_DB_URL: 
-        //secretTursoUrl.value,
-        // process.env.TURSO_DB_URL!,
           "libsql://d-riffs-test-block-lab.turso.io",
         TURSO_TOKEN:
-        //  secretTursoToken.value
-        // process.env.TURSO_TOKEN!,
          "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjY3MzkwOTYsImlkIjoiZTBhYTRlOGQtNjZjOS00OTE0LWJlN2EtNGM5MDNkMWNhZTQ4In0.l14RKm5e1Oqgn_n1TKJZ04LrbWcU3CNyNtwaqmH0gixcN9MrOkvdElxnyHehbhPWYJnVAIfMS9ytGu-_YO41CA",
       },
       // set your domain. if you have purchased a route53 domain you can just insert here 
