@@ -21,6 +21,7 @@ package-lock.json
 
 src/database/db.ts
 sst.config.ts
+drizzle.config.ts
 
 # environment variables
 .env
@@ -31,6 +32,8 @@ sst.config.ts
 
 # ignore .astro directory
 .astro
+
+
 
 .idea
 
