@@ -39,6 +39,26 @@ Work in progress
 - 💙 Remotion 
 - 🌴 Tan Router
 
+## 🐱 Setup
+Rename the sstExample.ts -> sst.config.ts
+Rename src/database/tursoExample -> db.ts
+Rename drizzleExample.ts -> drizzle.config.ts
+Rename .env.example -> .env (optional...)
+
+Set your env variables. Turso url & token and Resend api key
+
+set your sst [secrets](https://sst.dev/docs/component/secret) 
+
+## 🐱 设置
+重命名 sstExample.ts -> sst.config.ts
+重命名 src/database/tursoExample -> db.ts
+重命名 drizzleExample.ts -> drizzle.config.ts
+重命名 .env.example -> .env （可选...）
+
+设置环境变量。更改 url 和令牌并重新发送 api 密钥
+
+设置您的 sst [secrets](https://sst.dev/docs/component/secret) 
+
 
 ## ⛳ Deployment
 
