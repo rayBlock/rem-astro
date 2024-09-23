@@ -22,11 +22,22 @@ Work in progress
 - 🌏 - Translation using [astro-i18n-aut](https://github.com/jlarmstrongiv/astro-i18n-aut)
 - 🌏 - 我们使用 [astro-i18n-aut](https://github.com/jlarmstrongiv/astro-i18n-aut) 对页面进行乘法运算 
 
+- 🧅 - Auth using MagicLink with [Lucia](https://lucia-auth.com/) auth & resend. 
+- 🧅 - 使用 MagicLink 与 Lucia[Lucia](https://lucia-auth.com/) 验证和重新发送。
+
+        - Middleware for usercheck. Individual Route protection.
+         - 用于用户检查的中间件。个人路由保护。
+
+- 🌴 Tan [Router](https://tanstack.com/router/latest)
+- 🌴谭[路由器](https://tanstack.com/router/latest)
+
 
 ## ✨ Tech Stacks
 
 - 💻 Frontend: Astro + Tailwind + Shadcn/ui 
 - 🗂️ Database: Turso + Drizzle
+- 💙 Remotion 
+- 🌴 Tan Router
 
 
 ## ⛳ Deployment
@@ -63,6 +74,9 @@ Add a domain to aws route53 and put that domain name in sst.config.
 
 部署到生产环境。为您创建一个 url。
 在 aws route53 中添加一个域名，并将该域名放入 sst.config。
+
+Deploys a Remotion Site & Lambda for rendering.
+部署 Remotion 站点和 Lambda 以进行渲染 
 
 ```bash
 pnpm run deploy
