@@ -1,7 +1,7 @@
 {
-  "name": "deco",
+  "name": "remotion-astro",
   "version": "1.0.0",
-  "description": "desc",
+  "description": "A starter template for SaaS with remotion and Astro",
   "author": "ray",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,7 @@
     "studio": "drizzle-kit studio",
     "deploy": "npx sst deploy --stage production",
     "remove-sst": "npx sst remove --stage production",
-    "start": "npx remotion studio /remotion/index.ts"
+    "start": "npx remotion studio rem/index.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.1.1",

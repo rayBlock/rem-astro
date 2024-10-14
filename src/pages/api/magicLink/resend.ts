@@ -9,11 +9,15 @@ import { Resource } from "sst";
 
 // in your terminal
 // sst set secret ResendApiKey YourResendKeyHere
+
+// for production
+// sst set secret ResendApiKey YourResendKeyHere --stage production
 // https://sst.dev/docs/reference/cli/#secret
 
 export const prerender = false;
 const resend = new Resend(
-    Resource.ResendApiKey.value
+    // Resource.ResendApiKey.value ?? 
+    're_hMwZ3Rd1_LKdPBan8vioSZ2umaNAAmcfm'
 );
 
 export const sendEmail = async (

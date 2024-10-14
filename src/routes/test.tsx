@@ -33,18 +33,23 @@ const ReactComponent = () => {
   const sessionId = matches[1] && matches[1].context.session ? matches[1].context.session.id : "null";
 
   // const { session, user } = lucia.validateSession(sessionId);
-
+const buttonStyle:React.CSSProperties = {
+  border: '1px solid red',
+  padding: '10px',
+  borderRadius: '10px',
+} 
   return (
 
     <div>
-      {state === 0 ? <button onClick={() => setState(1)}>click</button> : <button onClick={() => setState(0)}>clack</button>}
+      {state === 0 ? <button style={buttonStyle} onClick={() => setState(1)}>click</button> :
+       <button style={buttonStyle} onClick={() => setState(0)}>clack</button>}
       <br />
 
-      Hello /test! what what
+      Hello world
 
       <br />
       <form method="post" action="/api/logout" id="logout">
-        <button>Sign out</button>
+        <button className='btn text-secondary'>Sign out</button>
       </form>
 
 

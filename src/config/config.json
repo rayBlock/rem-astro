@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "haitangi18n",
+    "title": "rem-astro",
     "base_url": "",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.svg",
+    "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "124",
-    "logo_height": "30",
+    "logo_width": "40",
+    "logo_height": "40",
     "logo_text": "hello"
   },
 
@@ -23,8 +23,8 @@
   },
 
   "metadata": {
-    "meta_author": "somebody",
-    "meta_image": "/images/screenshot.png",
-    "meta_description": "海棠诗meta desc桃源"
+    "meta_author": "ray",
+    "meta_image": "/images/flowa05.png",
+    "meta_description": "hello world"
   }
 }

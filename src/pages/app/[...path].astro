@@ -1,5 +1,5 @@
 ---
-import Base from "@/layouts/Base.astro";
+import Layout from "@/layouts/Layout.astro";
 import { App } from "../../app";
 
 export const prerender = false;
@@ -19,6 +19,6 @@ const { session } = Astro.locals;
 // }) satisfies GetStaticPaths;
 ---
 
-<Base title="App">
+<Layout title="App">
   <App client:only="react" session={session}/>
-</Base>
+</Layout>

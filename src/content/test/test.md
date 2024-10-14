@@ -1,16 +1,14 @@
 ---
 title: "Test "
-meta_title: "tt"
-hello: "helo"
-description: " mettion"
+meta_title: "title meta "
+description: "desc..."
 draft: false
-more: "some"
 en:
   {
     header1: "Top Header",
     header2: "Secondary Header",
     sub: "Subtitle 1",
-    text: "More text",
+    text: "More text \n and even more",
   }
 fr:
   {

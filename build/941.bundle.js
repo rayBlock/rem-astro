@@ -1,4 +1,4 @@
-(self["webpackChunkdeco"] = self["webpackChunkdeco"] || []).push([[941],{
+(self["webpackChunkremotion_astro"] = self["webpackChunkremotion_astro"] || []).push([[941],{
 
 /***/ 8054:
 /***/ ((__unused_webpack_module, exports) => {

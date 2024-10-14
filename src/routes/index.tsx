@@ -1,6 +1,8 @@
 // import { Navigation } from '@/components/Nav/Nav';
 import { lucia } from '@/lib/auth/lucia';
+import { Player } from '@remotion/player';
 import { createFileRoute, useRouterState } from '@tanstack/react-router'
+import { MyComp } from 'rem/Composition';
 
 export const Route = createFileRoute('/')({
     beforeLoad: async ({ location }) => {
@@ -42,8 +44,17 @@ export const Route = createFileRoute('/')({
         // console.log(t, "tttttt");
 
         return (
-            <div>
+            <div className='mt-6 flex justify-center items-center w-full flex-col gap-28'>
                 {/* <Navigation from={'/'} /> */}
+                <Player
+                    component={MyComp}
+                    compositionHeight={360}
+                    compositionWidth={640}
+                    durationInFrames={300}
+                    fps={30}
+                    controls
+                    allowFullscreen
+                    clickToPlay />
                 Hello / world
                 {JSON.stringify(so)}
                 {/* {JSON.stringify(matches[0].context.session)} */}

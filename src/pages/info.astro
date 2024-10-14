@@ -1,7 +1,8 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { Resource } from "sst";
-console.log(Resource, "Resource");
+
+const {user, session} = Astro.locals;
 
 ---
 
@@ -14,9 +15,12 @@ console.log(Resource, "Resource");
           >hello world</button
         >
         <br />
-
-        {Resource.TursoToken.value} <br/>
-        {Resource.ResendApiKey.value}
+          <!-- for testing -->
+        <!-- {Resource.TursoToken.value} <br/>
+        {Resource.ResendApiKey.value} <br/> -->
+        {JSON.stringify(user, null, 2)} <br/>
+        <br/>
+        {JSON.stringify(session, null, 2)} 
 
       </div>
     </div>

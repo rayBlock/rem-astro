@@ -20,14 +20,13 @@ export interface Props {
   image?: string;
   noindex?: boolean;
   canonical?: string;
-  noFooter?: boolean;
 }
 
 // destructure frontmatters
-const { title, meta_title, description, image, noindex, canonical, noFooter } =
+const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
-const locale = getLang(Astro.url.pathname as any);
+  const locale = getLang(Astro.url.pathname as any);
 ---
 
 <!doctype html>
@@ -47,8 +46,9 @@ const locale = getLang(Astro.url.pathname as any);
 
     <Header
       isSticky
-      showSearch={false}
+      showSearch = {false}
       showToggleTheme
+      showTwitter
       showGithub
       showLanguageSwitcher
       {...headerConfig}
@@ -60,8 +60,12 @@ const locale = getLang(Astro.url.pathname as any);
       <slot />
     </main>
 
-    {!noFooter && <Footer {...footerConfig} />}
-    <Toaster className="mt-14" position="top-right" richColors client:load />
+    <Toaster
+      className="mt-14"
+      position="top-right"
+      richColors
+      client:load
+    />
 
     <BasicScripts />
   </body>

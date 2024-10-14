@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdeco"] = self["webpackChunkdeco"] || []).push([[75],{
+(self["webpackChunkremotion_astro"] = self["webpackChunkremotion_astro"] || []).push([[75],{
 
 /***/ 8075:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {

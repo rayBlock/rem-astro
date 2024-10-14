@@ -5,7 +5,7 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
-    "RemotionTang": {
+    "RemotionAstroWebsite": {
       "type": "sst.aws.Astro"
       "url": string
     }

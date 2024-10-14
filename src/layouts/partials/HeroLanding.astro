@@ -4,6 +4,7 @@ import { Playa } from "@/components/remotion/Playa";
 import { getLang } from "@/utils/i18n";
 import { Picture } from "astro:assets";
 import { getEntry } from "astro:content";
+import { Suspense } from "react";
 
 const hero = await getEntry("sections", "landing");
 
@@ -20,6 +21,7 @@ const adjustLink2 = lang === "en" ? link2 : `${lang}${link2}`;
     <div class="grid items-center md:grid-cols-2 md:min-h-96">
       {/* hero image on the right */}
       <div class="py-6 hidden md:block md:order-1">
+
         <Playa client:only="react" />
 
         {/* <Picture

@@ -28,12 +28,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        remotion: "#0e7ce3",
-        sst: "#e27152",
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
         dark: theme.colors.default.text_color.dark,
-
         primary: theme.colors.default.theme_color.primary,
         secondary: theme.colors.default.theme_color.secondary,
         body: theme.colors.default.theme_color.body,
