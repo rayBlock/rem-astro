@@ -5,11 +5,9 @@ import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
 import BaseHead from "@/partials/BaseHead.astro";
 import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
-import { footerConfig } from "@/config/FooterConfig";
-import { headerConfig } from "@/config/HeaderConfig";
+import { authHeaderConfig } from "@/config/AuthHeaderConfig";
 import BasicScripts from "@/layouts/BasicScripts.astro";
 import { Toaster } from "@/components/ui/sonner";
-import SearchModal from "./helpers/SearchModal";
 import { getLang } from "@/utils/i18n";
 
 // types for frontmatters
@@ -26,7 +24,7 @@ export interface Props {
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
-  const locale = getLang(Astro.url.pathname as any);
+const locale = getLang(Astro.url.pathname as any);
 ---
 
 <!doctype html>
@@ -46,26 +44,20 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <Header
       isSticky
-      showSearch = {false}
+      showSearch={false}
       showToggleTheme
-      showTwitter
       showGithub
       showLanguageSwitcher
-      {...headerConfig}
+      {...authHeaderConfig}
     />
 
-    <SearchModal client:visible />
+    <!-- <SearchModal client:visible /> -->
 
     <main id="main-content">
       <slot />
     </main>
 
-    <Toaster
-      className="mt-14"
-      position="top-right"
-      richColors
-      client:load
-    />
+    <Toaster className="mt-14" position="top-right" richColors client:load />
 
     <BasicScripts />
   </body>

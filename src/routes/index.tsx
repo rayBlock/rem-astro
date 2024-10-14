@@ -7,9 +7,6 @@ import { MyComp } from 'rem/Composition';
 export const Route = createFileRoute('/')({
     beforeLoad: async ({ location }) => {
 
-
-
-        // const so = lucia.readSessionCookie();
         console.log(location, "location")
         // if (!isAuthenticated()) {
         //   throw redirect({
@@ -40,9 +37,6 @@ export const Route = createFileRoute('/')({
         const { session, user } = Route.useLoaderData();
         console.log(user, "rr");
 
-        // const t = useRouterState().matches;
-        // console.log(t, "tttttt");
-
         return (
             <div className='mt-6 flex justify-center items-center w-full flex-col gap-28'>
                 {/* <Navigation from={'/'} /> */}
@@ -55,9 +49,7 @@ export const Route = createFileRoute('/')({
                     controls
                     allowFullscreen
                     clickToPlay />
-                Hello / world
-                {JSON.stringify(so)}
-                {/* {JSON.stringify(matches[0].context.session)} */}
+                {/* {JSON.stringify(so)} */}
             </div>
         )
     }

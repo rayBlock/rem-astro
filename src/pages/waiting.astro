@@ -9,7 +9,6 @@ const waiting = await getEntry("waiting", "wait");
 const { title, description, meta_title,  } = waiting.data;
 const lang = getLang(Astro.url.pathname);
 const { header1, header2, sub, text } = waiting.data[lang];
-console.log(waiting.data[lang], "about");
 ---
 
 <Base

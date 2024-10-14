@@ -38,19 +38,10 @@ function ReactApp({
 }: {
     session: any
 }) {
-
-    console.log(session, "sessionista ??");
-    
-    // const cookieHeader = lucia.sessionCookieName;
-    // console.log(cookieHeader, "cookieHeader");
-
-    // const som = lucia.readSessionCookie();
-    // const auth = useAuth();
     if (!session) {
         return <div className="w-screen flex justify-center align-middle items-center min-w-screen min-h-screen h-screen absolute ">
             <p className="text-3xl text-primary-content">
-                {/* TODO insert animation and Logo  */}
-                DriFFs.com
+                waiting for session
             </p>
         </div>
     }

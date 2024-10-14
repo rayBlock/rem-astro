@@ -43,7 +43,7 @@ export type translatedlink = {
 };
 
 // Type for the header configuration, including actions
-type headerConfig = {
+export type HeaderConfig = {
   i18n: langSegment[];
   links: translatedlink[];
   actions?: {
@@ -56,7 +56,7 @@ type headerConfig = {
 //  data for navigation -> <Header>
 
 
-export const headerConfig: headerConfig = {
+export const headerConfig: HeaderConfig = {
   i18n: [
     {
       language: "English",
@@ -196,3 +196,4 @@ export const headerConfig: headerConfig = {
   // }
   ],
 };
+

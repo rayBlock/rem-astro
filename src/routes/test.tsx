@@ -1,5 +1,4 @@
 import { lucia } from '@/lib/auth/lucia'
-// import { cn } from '@/lib/utils/twM'
 import { createFileRoute, Link, useRouterState } from '@tanstack/react-router'
 import { useState } from 'react'
 
@@ -19,16 +18,12 @@ export const Route = createFileRoute('/test')({
   },
   component: () => <ReactComponent />
 
-  // <div>Hello /test! what what
-
-  //   <Link className={cn(  'hover:underline hover:decoration-red-500')} to='/'>go home</Link>
-  // </div>
 })
 
 
 const ReactComponent = () => {
   const matches = useRouterState({ select: (s) => s.matches })
-  console.log(matches, "matches test");
+
   const [state, setState] = useState(0);
   const sessionId = matches[1] && matches[1].context.session ? matches[1].context.session.id : "null";
 

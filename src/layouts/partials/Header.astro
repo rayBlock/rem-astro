@@ -387,6 +387,7 @@ const lang = getLang(Astro.url.pathname);
           actions?.length ? (
             <span class="ml-4">
               {actions.map((btnProps) => (
+                <form action="/api/logout" method="POST">
                 <Button
                   variant="default"
                   className="text-sm shadow-none font-semibold px-5 py-1.5"
@@ -394,6 +395,7 @@ const lang = getLang(Astro.url.pathname);
                 >
                   {btnProps.text}
                 </Button>
+                </form>
               ))}
             </span>
           ) : (
